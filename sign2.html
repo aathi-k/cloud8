@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign In Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background-image: url('path/to/your/background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-box {
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            color: white;
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            padding: 0;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .textbox input {
+            width: 100%;
+            overflow: hidden;
+            padding: 8px 0;
+            margin: 8px 0;
+            border-bottom: 1px solid #4caf50;
+            color: white;
+            background: transparent;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            background: #4caf50;
+            border: none;
+            outline: none;
+            height: 40px;
+            color: white;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #45a049;
+        }
+
+        #success-message {
+            margin-top: 20px;
+            display: none;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="myForm" action="signin.php" method="POST" onsubmit="return validateForm()">
+
+        <div class="login-box">
+
+            <h1>Sign In</h1>
+
+            <div class="textbox">
+                <input type="text" placeholder="Username" name="user" value="" required>
+            </div>
+            <div class="textbox">
+                <input type="password" placeholder="Password" name="pass" value="" maxlength="8" required>
+            </div>
+
+            <button class="btn" type="submit" name="submit">Sign In</button>
+
+            <div id="success-message">
+                Sign in successfully!
+            </div>
+
+            <center><a style="color: white;" href="signup.html">Don't have an account?</a></center>
+        </div>
+
+    </form>
+
+    <script>
+        function validateForm() {
+            // Add your validation logic here
+            // For demonstration purposes, always returning true
+            document.getElementById('success-message').style.display = 'block';
+            return true;
+        }
+    </script>
+</body>
+
+</html>
